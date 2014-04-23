@@ -71,3 +71,7 @@ public class TestMain {
 }
 
 ```
+
+运行截图
+> ![image](https://raw.githubusercontent.com/sintrb/JavaPlot/master/doc/screenshots/test_figure1.png)
+

@@ -1,10 +1,9 @@
-### JavaPlot
+# JavaPlot
 
 A Matlab上plot功能类似的Java实现，基于swing组件，方便Java绘制波形。
 
-=
 
-#### API说明
+## API说明
 
 所有的绘图api均封装在Plot类下，使用和Matlab类似的函数名称。
 
@@ -15,9 +14,8 @@ A Matlab上plot功能类似的Java实现，基于swing组件，方便Java绘制�
 * axis() 设置显示范围
 * suit() 设置显示范围为最佳视野
 
-=
 
-#### 使用举例
+## 使用举例
 
 建绘图面板：
 ``` Java
@@ -72,6 +70,8 @@ public class TestMain {
 
 ```
 
-运行截图
+## 运行截图
+* 绘制正弦余弦
+
 > ![image](https://raw.githubusercontent.com/sintrb/JavaPlot/master/doc/screenshots/test.png)
 

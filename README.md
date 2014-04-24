@@ -76,6 +76,8 @@ public class TestMain {
 > ![image](https://raw.githubusercontent.com/sintrb/JavaPlot/master/doc/screenshots/test.png)
 
 
+=
+
 ## 怎么获取这些代码？
 
 * 如果你只是想简单的使用这些代码的话你可以把它当作一个压缩包下载到你的电脑上，点击右边的“Download ZIP”:

@@ -79,11 +79,11 @@ public class PlotPanle extends JPanel {
 	private void drawLine(Graphics g, double x1, double y1, double x2, double y2) {
 		g.drawLine(mappingX(x1), mappingY(y1), mappingX(x2), mappingY(y2));
 	}
-
+	// 绘制点
 	private void drawPoint(Graphics g, double x, double y) {
 		g.drawOval(mappingX(x, true), mappingY(y, true), attribute.width, attribute.width);
 	}
-
+	// 绘制柱状
 	private void drawColumnar(Graphics g, double x, double y) {
 		if (y > 0) {
 			g.fillRect(mappingX(x) - point_w / 2, mappingY(y), point_w, (int) (y * h / (axis_h)) + 1);
@@ -93,11 +93,11 @@ public class PlotPanle extends JPanel {
 			g.fillRect(mappingX(x) - point_w / 2, mappingY(y) + hh, point_w, hh);
 		}
 	}
-
+	// 填充点
 	private void fillPoint(Graphics g, double x, double y) {
 		g.fillOval(mappingX(x, true), mappingY(y, true), attribute.width, attribute.width);
 	}
-
+	// 信息
 	private void drawPlotInfo(Graphics g) {
 		// axis info
 		g.setColor(Color.BLACK);
@@ -105,11 +105,27 @@ public class PlotPanle extends JPanel {
 		FontMetrics lm = g.getFontMetrics();
 		g.drawString(axisString, (w - lm.getWidths()[0] * axisString.length()) / 2, lm.getHeight());
 
-		// axle info
+		// axle coordinate
 		g.setColor(Color.GRAY);
 		g.drawLine(0, mappingY(0), w, mappingY(0));
 		g.drawLine(mappingX(0), 0, mappingX(0), h);
 
+		
+		// x label info
+		int hc = 10;
+		double hk = this.axis_w/hc;
+		//Math.abs(this.axis_x)
+		for(int i=0; i<hc; ++i){
+			double x = this.axis_x+hk*i;
+			String lb = String.format("%.02f", x);
+			g.setColor(Color.BLACK);
+			g.drawString(lb, mappingX(x)-10, mappingY(0)+15);
+			
+			g.setColor(Color.RED);
+			g.drawLine(mappingX(x), mappingY(0), mappingX(x), mappingY(0)-5);
+		}
+		
+		
 		// drawable Objects Control
 		for (int i = 0; i < this.drawableObjectStack.size(); ++i) {
 			DrawableObject drawo = this.drawableObjectStack.get(i);
